@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import style from "./App.css";
 import Search from "./components/Search";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
@@ -7,7 +7,7 @@ import TodosList from "./components/TodosList";
 
 const App = () => {
   const [filter, setFilter] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [search, setSearch] = useState(true);
   const [input, setInput] = useState("");
   const [inputSearch, setInputSearch] = useState("");
   const [editTodo, setEditTodo] = useState(null);
@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="app-wrapper">
+      <div className="app__wrapper">
         <div>
           <Search onFilterClick={handleFilter} onSearchClick={handleSearch} hanlderSearchTodos={hanlderSearchTodos} />
         </div>

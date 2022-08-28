@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.form__add {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.task__input {
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 39px;
+  padding-left: 10px;
+  width: 275px;
+  margin-right: 17px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+}
+.task__input::placeholder {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.button__add {
+  width: 70px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 0;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: 39px;
+  color: #5d5c5c;
+}

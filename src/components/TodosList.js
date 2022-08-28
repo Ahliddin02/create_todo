@@ -1,7 +1,7 @@
 import React from "react";
-// import { FaCheckCircle } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
+import style from "./TodoList.module.css";
 
 const TodosList = ({ todos, setTodos, setEditTodo, inputSearch, filterTodos }) => {
   const handleComplete = (todo) => {
@@ -28,23 +28,24 @@ const TodosList = ({ todos, setTodos, setEditTodo, inputSearch, filterTodos }) =
     <div>
       {todos
         .filter((el) => el.title.search(inputSearch) !== -1)
-        .filter((el) => el.id.search(filterTodos) !== -1)
+        .filter((e) => (filterTodos === 1 ? true : filterTodos === 2 ? e.completed : !e.completed))
+
         .map((todo) => (
-          <li className="list__item" key={todo.id}>
+          <li className={style.list__item} key={todo.id}>
             <input
               type="text"
               value={todo.title}
               className={`list ${todo.completed ? "complete" : ""}`}
               onChange={(event) => event.preventDefault()}
             />
-            <div className="variants">
-              <button className="button-complete task-button" onClick={() => handleComplete(todo)}>
-                <input type="checkbox" className="check__box" id="checkbox1" />
+            <div className={style.variants}>
+              <button className={style.button__complete} onClick={() => handleComplete(todo)}>
+                <input type="checkbox" className={style.check__box} checked={todo.completed} />
               </button>
-              <button className="button-edit task-button" onClick={() => handleEdit(todo)}>
+              <button className={style.button__edit} onClick={() => handleEdit(todo)}>
                 <AiFillEdit />
               </button>
-              <button className="button-delete task-button" onClick={() => handleDelete(todo)}>
+              <button className={style.button__delete} onClick={() => handleDelete(todo)}>
                 <AiFillDelete />
               </button>
             </div>

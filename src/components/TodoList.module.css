@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #fff;
+  max-height: 30px;
+}
+.variants {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+.button__complete {
+  color: #ff6c6c;
+  margin-right: 10px;
+}
+.check__box {
+  width: 20px;
+  height: 20px;
+  background: none !important;
+}
+.button__edit {
+  color: #e2d029;
+  margin-right: 10px;
+}
+.button__delete {
+  color: lightseagreen;
+}
+.button__complete,
+.button__delete,
+.button__edit {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 24px;
+  border-radius: 50%;
+}

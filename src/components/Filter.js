@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Filter.module.css";
 
 const radioBtn = [
   {
@@ -19,20 +20,19 @@ const radioBtn = [
 ];
 
 const Filter = ({ filterTodos, setFilterTodos }) => {
-  console.log(filterTodos);
-
   return (
-    <div className="filter__all">
-      {radioBtn.map((input) => (
+    <div className={style.filter__all}>
+      {radioBtn.map((input, index) => (
         <div key={input.id}>
           <input
             type="radio"
             id={input.type}
             name="fav_language"
-            value={input.id}
-            onChange={(e) => setFilterTodos(e.target.value)}
+            value={index + 1}
+            checked={index + 1 === filterTodos}
+            onChange={(e) => setFilterTodos(+e.target.value)}
           />
-          <label for={input.type} className="text__label">
+          <label for={input.type} className={style.text__label}>
             {input.title}
           </label>
         </div>

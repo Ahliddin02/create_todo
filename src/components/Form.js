@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import style from "./Form.module.css";
 
 const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
   const updateTodo = (title, id, completed) => {
@@ -28,16 +29,16 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
     }
   };
   return (
-    <form onSubmit={onFormSubmit} className="form__add">
+    <form onSubmit={onFormSubmit} className={style.form__add}>
       <input
         type="text"
         placeholder="Type your new task"
-        className="task__input"
+        className={style.task__input}
         value={input}
         required
         onChange={onInputChange}
       />
-      <button className="button__add" type="submit">
+      <button className={style.button__add} type="submit">
         {editTodo ? "OK" : "Add"}
       </button>
     </form>
