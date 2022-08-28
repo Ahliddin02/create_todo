@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import style from "./App.css";
 import Search from "./components/Search";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
